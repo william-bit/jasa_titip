@@ -5,7 +5,7 @@ export const Header = () => {
     <div className="flex justify-between px-8 py-4 text-white bg-black">
       <Link href="/">
         <div className="text-2xl font-extrabold cursor-pointer ">
-          Skripsi Kost
+          Kost Gilak
         </div>
       </Link>
       <div className="flex items-center space-x-8 text-lg font-semibold">

@@ -5,7 +5,7 @@ export const Hero = () => {
         Diskon terbaik ada di sini
       </div>
       <div className="mt-2 text-xl font-semibold text-center pb-14">
-        Ayo masuk ke Skripsi Kost dan dapatkan diskon 10% atau lebih dengan
+        Ayo masuk ke Kost Gilak dan dapatkan diskon 10% atau lebih dengan
         booking kost di sini
       </div>
     </div>
