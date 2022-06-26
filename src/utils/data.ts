@@ -18,10 +18,15 @@ let filter: IFilter = {};
 export const setFilterProduct = (filterParam: IFilter) => {
   filter = filterParam;
 };
-export const getListProduct = (search: string) => {
-  return axios.post(Url.register + "/" + search, filter);
-};
 
 export const getDetailProduct = (id: number) => {
   return axios.post(Url.register + "/" + id);
+};
+
+export const getListShop = () => {
+  return axios.get(Url.home);
+};
+
+export const getListProduct = () => {
+  return axios.get(Url.shop);
 };

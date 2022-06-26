@@ -1,9 +1,9 @@
 import { ToastContainer, toast } from "react-toastify";
-import Sidebar from "../../components/layouts/Sidebar";
 import Header from "../../components/layouts/Header";
+import Sidebar from "../../components/layouts/Sidebar";
+import InputForm from "../../custom/InputForm";
+import { TableCustom } from "../../custom/Table";
 import { useStore } from "../../store/store";
-import InputForm from "../../components/custom/InputForm";
-import { TableCustom } from "../../components/custom/Table";
 const Product = () => {
   let listMenu = [
     { label: "Dashboard" },

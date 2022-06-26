@@ -13,7 +13,7 @@ const TrCustom = () => {
             />
           </div>
           <div className="ml-3">
-            <p className="text-gray-900 whitespace-no-wrap">Vera Carpenter</p>
+            <p className="text-gray-900 whitespace-no-wrap">Rumah Jaya</p>
           </div>
         </div>
       </td>
@@ -24,7 +24,7 @@ const TrCustom = () => {
         <p className="text-gray-900 whitespace-no-wrap">Jan 21, 2020</p>
       </td>
       <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
-        <p className="text-gray-900 whitespace-no-wrap">43</p>
+        <p className="text-gray-900 whitespace-no-wrap">4</p>
       </td>
       <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
         <span className="relative inline-block px-3 py-1 font-semibold leading-tight text-green-900">
@@ -82,13 +82,13 @@ export const TableCustom = () => {
                     Name
                   </th>
                   <th className="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200">
-                    products
+                    Description
                   </th>
                   <th className="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200">
                     Created at
                   </th>
                   <th className="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200">
-                    QRT
+                    Room Available
                   </th>
                   <th className="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200">
                     Status
@@ -97,14 +97,11 @@ export const TableCustom = () => {
               </thead>
               <tbody>
                 <TrCustom></TrCustom>
-                <TrCustom></TrCustom>
-                <TrCustom></TrCustom>
-                <TrCustom></TrCustom>
               </tbody>
             </table>
             <div className="flex flex-col items-center px-5 py-5 bg-white border-t xs:flex-row xs:justify-between ">
               <span className="text-xs text-gray-900 xs:text-sm">
-                Showing 1 to 4 of 50 Entries
+                Showing 1 to 1 of 1 Entries
               </span>
               <div className="inline-flex mt-2 xs:mt-0">
                 <button className="px-4 py-2 text-sm font-semibold transition duration-150 bg-indigo-600 rounded-l text-indigo-50 hover:bg-indigo-500">

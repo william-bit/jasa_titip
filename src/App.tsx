@@ -11,6 +11,8 @@ import Renter from "./pages/register/Renter";
 import Tenant from "./pages/register/Tenant";
 import { checkGetToken } from "./utils/authenticate";
 import { ToastContainer } from "react-toastify";
+import { Checkout } from "./pages/Checkout";
+import { Profile } from "./pages/Profile";
 
 function App() {
   checkGetToken();
@@ -27,6 +29,8 @@ function App() {
         <Route path="/register/renter" element={<Renter />} />
         <Route path="/register/tenant" element={<Tenant />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/admin/product" element={<Product />} />
       </Routes>
     </>

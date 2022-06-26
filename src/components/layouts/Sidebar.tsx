@@ -17,7 +17,7 @@ export default function Sidebar({ listMenu }: ISidebar) {
   return (
     <div className="flex flex-col">
       <div className="flex items-center justify-center h-10 justify-items-center">
-        <span className="text-white">Kost Gilak</span>
+        <span className="text-white">Titip Panel</span>
       </div>
       {listMenu.map((item: object, i: number) => (
         <div key={i}>{Menu(item)}</div>

@@ -13,7 +13,10 @@ export interface ILaravelApiErrorReturn {
   };
 }
 const Auth = () => {
-  const [form, setForm] = useState<ILoginParam>({});
+  const [form, setForm] = useState<ILoginParam>({
+    email: "",
+    password: "",
+  });
   const handleChange = (
     label: string,
     e: React.ChangeEvent<HTMLInputElement>

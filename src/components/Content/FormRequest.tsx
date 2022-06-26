@@ -60,20 +60,24 @@ const TextInput = ({ label, placeholder }: ITextInput) => {
     </>
   );
 };
-const InputForm = () => {
+const FormRequest = () => {
   return (
-    <div className="w-1/4 border-2 shadow-md ">
-      <div className="w-full py-2 text-2xl font-bold text-center text-black">
-        Add New Room
+    <div className="w-1/4 bg-black shadow-md rounded-2xl ">
+      <div className="w-full py-2 text-2xl font-bold text-center text-white">
+        Request Barang
       </div>
-      <div className="w-full ">
+      <div className="w-full bg-gray-200 border-2 rounded-2xl">
         <div className="px-5 py-3">
-          <TextInput label="Room" placeholder="Room for Customer"></TextInput>
-          <TextInput placeholder="Price"></TextInput>
-          <TextInput placeholder="Description"></TextInput>
+          <TextInput
+            label="Pesanan"
+            placeholder="Product yang di minta"
+          ></TextInput>
+          <TextInput placeholder="Perkiraan harga"></TextInput>
+          <TextInput placeholder="Harga unit"></TextInput>
+          <TextInput placeholder="Catatan"></TextInput>
           <FileUpload></FileUpload>
           <button className="w-full px-4 py-2 text-2xl font-bold text-white bg-black rounded-full">
-            Add New Product
+            Kirim Penawaran
           </button>
         </div>
       </div>
@@ -81,4 +85,4 @@ const InputForm = () => {
   );
 };
 
-export default InputForm;
+export default FormRequest;

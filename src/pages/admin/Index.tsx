@@ -1,12 +1,14 @@
 import { ToastContainer, toast } from "react-toastify";
-import Sidebar from "../../components/layouts/Sidebar";
 import Header from "../../components/layouts/Header";
+import Sidebar from "../../components/layouts/Sidebar";
 import { useStore } from "../../store/store";
 const Index = () => {
   let listMenu = [
     { label: "Dashboard" },
-    { label: "Product", href: "/admin/product" },
-    { label: "Report" },
+    { label: "Request List" },
+    { label: "Complete Request" },
+    { label: "Request History" },
+    { label: "LogOut", src: "/" },
   ];
   const loginToast = useStore((state) => state.loginToast);
   const toggleLoginToast = useStore((state) => state.toggleLoginToast);
