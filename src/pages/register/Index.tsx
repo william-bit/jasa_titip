@@ -30,8 +30,8 @@ const Index = () => {
           </div>
         </div>
         <div className="flex justify-center space-x-10 h-52">
-          <Card title="Renter" link="/register/renter"></Card>
-          <Card title="Tenant" link="/register/tenant"></Card>
+          <Card title="Vendor" link="/register/vendor"></Card>
+          <Card title="Customer" link="/register/customer"></Card>
         </div>
       </div>
     </div>

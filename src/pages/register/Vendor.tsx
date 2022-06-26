@@ -16,7 +16,7 @@ export interface ILaravelApiErrorReturn {
   };
 }
 
-const Renter = () => {
+const Vendor = () => {
   const [form, setForm] = useState<IRegisterParam>({
     name: "",
     address: "",
@@ -185,4 +185,4 @@ const Renter = () => {
   );
 };
 
-export default Renter;
+export default Vendor;
