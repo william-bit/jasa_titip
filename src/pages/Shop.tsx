@@ -1,7 +1,7 @@
 import { Header } from "../components/Navbar/Header";
 import List from "../List/List";
 
-const Vendor = () => {
+const Shop = () => {
   return (
     <div className="flex flex-col ">
       <Header></Header>
@@ -10,4 +10,4 @@ const Vendor = () => {
   );
 };
 
-export default Vendor;
+export default Shop;

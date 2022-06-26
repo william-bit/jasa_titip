@@ -6,13 +6,13 @@ import Home from "./pages/Home";
 import Register from "./pages/register/Index";
 import Admin from "./pages/admin/Index";
 import Product from "./pages/admin/Product";
-import Vendor from "./pages/Vendor";
-import Renter from "./pages/register/Renter";
-import Tenant from "./pages/register/Tenant";
 import { checkGetToken } from "./utils/authenticate";
 import { ToastContainer } from "react-toastify";
 import { Checkout } from "./pages/Checkout";
 import { Profile } from "./pages/Profile";
+import Customer from "./pages/register/Customer";
+import Shop from "./pages/Shop";
+import Vendor from "./pages/register/Vendor";
 
 function App() {
   checkGetToken();
@@ -24,10 +24,10 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/auth" element={<Auth />} />
         <Route path="/detail" element={<Detail />} />
-        <Route path="/vendor" element={<Vendor />} />
+        <Route path="/vendor" element={<Shop />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/register/renter" element={<Renter />} />
-        <Route path="/register/tenant" element={<Tenant />} />
+        <Route path="/register/vendor" element={<Vendor />} />
+        <Route path="/register/customer" element={<Customer />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/profile" element={<Profile />} />
