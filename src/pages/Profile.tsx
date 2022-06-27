@@ -1,9 +1,12 @@
-import React from "react";
-import Sidebar from "../components/layouts/Sidebar";
+import SidebarProfile from "../components/layouts/SideProfile";
 import { Header } from "../components/Navbar/Header";
 import { ProfileForm } from "../custom/ProfileForm";
 
-let listMenu = [{ label: "Personal Info" }, { label: "Transaction History" }];
+let listMenu = [
+  { label: "Personal Info" },
+  { label: "Ongoing transaction" },
+  { label: "Transaction History" },
+];
 
 const ProfileCard = () => (
   <div className="p-3 bg-white border-t-4 border-blue-400">
@@ -43,7 +46,7 @@ export const Profile = () => {
     <div>
       <Header></Header>
       <div className="flex">
-        <Sidebar listMenu={listMenu}></Sidebar>
+        <SidebarProfile listMenu={listMenu} />
         <div className="flex mx-auto">
           <div className="w-3/12 mr-3">
             <ProfileCard></ProfileCard>

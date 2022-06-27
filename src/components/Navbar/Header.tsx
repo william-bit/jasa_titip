@@ -8,7 +8,7 @@ export const Header = () => {
       </Link>
       <div className="flex items-center space-x-8 text-lg font-semibold">
         <Link href="/register">Register</Link>
-        <Link href="/requests">Request Item</Link>
+        <Link href="/shop">List Vendor</Link>
         <Link href="/auth">Sign In</Link>
         <Link href="/profile">Profile</Link>
       </div>

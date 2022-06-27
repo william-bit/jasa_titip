@@ -24,7 +24,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/auth" element={<Auth />} />
         <Route path="/detail" element={<Detail />} />
-        <Route path="/vendor" element={<Shop />} />
+        <Route path="/shop" element={<Shop />} />
         <Route path="/register" element={<Register />} />
         <Route path="/register/vendor" element={<Vendor />} />
         <Route path="/register/customer" element={<Customer />} />
@@ -32,6 +32,7 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/admin/product" element={<Product />} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </>
   );

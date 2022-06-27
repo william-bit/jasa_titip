@@ -1,3 +1,5 @@
+import { listNation } from "../utils/data";
+
 interface SelectionInterface {
   title: string;
 }
@@ -7,8 +9,11 @@ const Selection = ({ title }: SelectionInterface) => {
       <label>{title}</label>
 
       <select name="location">
-        <option value="banten">banten</option>
-        <option value="jakarta">jakarta</option>
+        {listNation.map((nation, index) => (
+          <option key={index} value={nation}>
+            {nation}
+          </option>
+        ))}
       </select>
     </div>
   );
@@ -16,8 +21,7 @@ const Selection = ({ title }: SelectionInterface) => {
 const Location = () => {
   return (
     <div className="flex flex-col w-full p-2 border rounded-lg h-44">
-      <Selection title="Provinsi"></Selection>
-      <Selection title="Kota"></Selection>
+      <Selection title="Nation"></Selection>
     </div>
   );
 };

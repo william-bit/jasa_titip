@@ -2,8 +2,9 @@ const Selection = () => {
   return (
     <div className="flex flex-col my-2">
       <select name="sorting">
-        <option value="price">Price</option>
+        <option value="recommended">Recommended</option>
         <option value="ranting">Ranting</option>
+        <option value="buy">Most Buy</option>
         <option value="view">View</option>
       </select>
     </div>
