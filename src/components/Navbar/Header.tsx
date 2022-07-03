@@ -1,3 +1,4 @@
+import { Popover } from "@headlessui/react";
 import { useStore } from "../../store/store";
 import { Link } from "../Links";
 
@@ -10,6 +11,7 @@ export const Header = () => {
         <div className="text-2xl font-extrabold cursor-pointer">TipBel.com</div>
       </Link>
       <div className="flex items-center space-x-8 text-lg font-semibold">
+        <Link href="/">Home</Link>
         {!userProfile.name ? (
           <>
             <Link href="/auth">Sign In</Link>
