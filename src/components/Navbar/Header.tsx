@@ -20,9 +20,9 @@ export const Header = () => {
           <>
             <Link href="/profile">{userProfile.name}</Link>
             {userProfile.role == 1 && (
-              <Link href="/admin/product">Vendor Page</Link>
+              <Link href="/admin/product">Traveler Panel</Link>
             )}
-            {userProfile.role == 0 && <Link href="/shop">Vendor Page</Link>}
+            {userProfile.role == 0 && <Link href="/shop">Traveler Page</Link>}
           </>
         )}
       </div>
