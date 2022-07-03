@@ -27,7 +27,6 @@ export const Header = () => {
           </>
         ) : (
           <>
-            <Link href="/profile">{userProfile.name}</Link>
             {userProfile.role == 1 && (
               <Link href="/admin/product">Traveler Panel</Link>
             )}
@@ -35,6 +34,15 @@ export const Header = () => {
             <span className="cursor-pointer" onClick={handleLogout}>
               LogOut
             </span>
+            <Link href="/profile">
+              <div className="overflow-hidden image">
+                <div className="flex items-center justify-center w-10 h-10 mx-auto bg-white border-2 rounded-full">
+                  <div className="text-xl font-bold text-red-500">
+                    {userProfile.name.charAt(0)}
+                  </div>
+                </div>
+              </div>
+            </Link>
           </>
         )}
       </div>
