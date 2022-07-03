@@ -35,23 +35,13 @@ const Card = ({ id, title, description, detail, src, price }: ICard) => {
   const userProfile = useStore((state) => state.userProfile);
   return (
     <div className="relative flex flex-row-reverse w-full p-2 my-2 border-2 border-gray-300 rounded-md shrink-0 h-44">
-      {src ? (
-        <img
-          src={src}
-          alt="Picture of the author"
-          width="200px"
-          height="300px"
-          className="rounded-md"
-        />
-      ) : (
-        <div className="overflow-hidden image">
-          <div className="flex items-center justify-center mx-auto border-2 rounded-full w-28 h-28">
-            <div className="pb-3 text-6xl font-bold">
-              {userProfile.name.charAt(0)}
-            </div>
-          </div>
-        </div>
-      )}
+      <img
+        src={src}
+        alt="Picture of the author"
+        width="200px"
+        height="300px"
+        className="rounded-md"
+      />
       <div className="w-full mx-3 text-left">
         <div>{title}</div>
         <div className="text-xs text-blue-500">{description}</div>
