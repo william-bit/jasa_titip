@@ -22,7 +22,6 @@ export const Header = () => {
             )}
           </>
         )}
-        <Link href="/shop">List Vendor</Link>
       </div>
     </div>
   );
