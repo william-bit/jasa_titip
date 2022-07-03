@@ -46,7 +46,6 @@ const Card = ({ id, title, description, detail, src, price }: ICard) => {
         <div>{title}</div>
         <div className="text-xs text-blue-500">{description}</div>
         <div className="text-xs text-justify">{detail}</div>
-        <div className="text-xs text-justify">Rp.{price}</div>
       </div>
       <div className="absolute flex items-end justify-start w-full h-full">
         <Guard id={id}>

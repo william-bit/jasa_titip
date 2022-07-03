@@ -218,6 +218,11 @@ const InputForm = ({
             placeholder="upload"
             register={register}
           ></FileUpload>
+          {formError.errors?.image?.map((item: string, i: number) => (
+            <div key={i} className="text-sm text-center text-red-600">
+              {item}
+            </div>
+          ))}
           <button className="w-full px-4 py-2 text-2xl font-bold text-white bg-black rounded-full">
             Add New Product
           </button>

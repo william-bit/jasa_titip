@@ -20,6 +20,7 @@ export const Header = () => {
             {userProfile.role == 1 && (
               <Link href="/admin/product">Vendor Page</Link>
             )}
+            {userProfile.role == 0 && <Link href="/shop">Vendor Page</Link>}
           </>
         )}
       </div>
