@@ -62,3 +62,40 @@ export const listNation: Array<string> = [
   "UK",
   "US",
 ];
+
+interface IFilter {
+  city?: number;
+  province?: number;
+  rentDate?: {
+    from: string;
+    until: string;
+  };
+  ranting?: number;
+  price?: {
+    from: number;
+    until: number;
+  };
+}
+let filter: IFilter = {};
+export const setFilterProduct = (filterParam: IFilter) => {
+  filter = filterParam;
+};
+
+export const getDetailProduct = (id: string | undefined) => {
+  return axios.get(Url.detailProduct + "/" + id);
+};
+
+export const getListShop = (search: string) => {
+  return axios.get(Url.home + "?search=" + search);
+};
+
+export const getListTransaction = (currentPage: number) => {
+  return axios.get(Url.transaction + "?page=" + currentPage); // credentials didn't match
+};
+
+export const getListProduct = (currentPage: number) => {
+  return axios.get(Url.listProduct + "?page=" + currentPage); // credentials didn't match
+};
+export const getListVendor = (search: string) => {
+  return axios.get(Url.listVendor + "?search=" + search); // credentials didn't match
+};

@@ -4,8 +4,14 @@ import { Url } from "./constanst";
 export interface IProductParam {
   name: string;
   price: string;
+  image: string;
   description: string;
+  location: string;
 }
-export const storeProduct = (param: IProductParam) => {
-  return axios.post(Url.storeProduct, param);
+export const storeProduct = (formData: FormData) => {
+  return axios.post(Url.storeProduct, formData, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
 };

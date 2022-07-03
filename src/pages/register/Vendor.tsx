@@ -3,7 +3,12 @@ import React, { useState } from "react";
 import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { register, IRegisterParam } from "../../utils/authenticate";
+import { useStore } from "../../store/store";
+import {
+  register,
+  IRegisterParam,
+  setAuthToken,
+} from "../../utils/authenticate";
 
 export interface ILaravelApiErrorReturn {
   message?: string;
@@ -23,7 +28,7 @@ const Vendor = () => {
     password_confirmation: "",
     password: "",
     email: "",
-    type: 0,
+    type: 1,
   });
   const [formError, setFormError] = useState<ILaravelApiErrorReturn>({});
 
@@ -36,6 +41,8 @@ const Vendor = () => {
 
   const navigate = useNavigate();
 
+  const setUserProfile = useStore((state) => state.setUserProfile);
+
   const { isLoading: isPosting, mutate: registerPost } = useMutation(
     async () => {
       return register(form);
@@ -47,6 +54,14 @@ const Vendor = () => {
           headers: res.headers,
           data: res.data,
         };
+        console.log(result);
+        setUserProfile({
+          email: res.data.content.user_email,
+          name: res.data.content.user_name,
+          role: res.data.content.role,
+          join: new Date(res.data.content.user_join),
+        });
+        setAuthToken(res.data.content.access_token);
         setFormError({});
         navigate("/admin");
         console.log(res.data);
@@ -112,7 +127,7 @@ const Vendor = () => {
               type="text"
               className="block w-full p-3 mt-4 border rounded border-grey-light"
               name="Address"
-              placeholder="Address"
+              placeholder="location"
               onChange={(event) => handleChange("address", event)}
             />
             {formError.errors?.address?.map((item: string, i: number) => (

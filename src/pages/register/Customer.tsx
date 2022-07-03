@@ -3,7 +3,12 @@ import React, { useState } from "react";
 import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { register, IRegisterParam } from "../../utils/authenticate";
+import { useStore } from "../../store/store";
+import {
+  register,
+  IRegisterParam,
+  setAuthToken,
+} from "../../utils/authenticate";
 
 export interface ILaravelApiErrorReturn {
   message?: string;
@@ -23,7 +28,7 @@ const Customer = () => {
     password_confirmation: "",
     password: "",
     email: "",
-    type: 1,
+    type: 0,
   });
   const [formError, setFormError] = useState<ILaravelApiErrorReturn>({});
 
@@ -36,6 +41,8 @@ const Customer = () => {
 
   const navigate = useNavigate();
 
+  const setUserProfile = useStore((state) => state.setUserProfile);
+
   const { isLoading: isPosting, mutate: registerPost } = useMutation(
     async () => {
       return register(form);
@@ -47,6 +54,14 @@ const Customer = () => {
           headers: res.headers,
           data: res.data,
         };
+        console.log(result);
+        setUserProfile({
+          email: res.data.content.user_email,
+          name: res.data.content.user_name,
+          role: res.data.content.role,
+          join: new Date(res.data.content.user_join),
+        });
+        setAuthToken(res.data.content.access_token);
         setFormError({});
         navigate("/");
         console.log(res.data);
@@ -143,7 +158,7 @@ const Customer = () => {
 
             <button
               type="submit"
-              className="w-full py-3 my-1 mt-4 text-center text-white bg-green-500 rounded hover:bg-green-600 focus:outline-none"
+              className="w-full py-3 my-1 mt-4 text-center text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none"
             >
               Create Account
             </button>
