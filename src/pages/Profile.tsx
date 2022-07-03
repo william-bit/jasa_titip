@@ -51,7 +51,7 @@ export const Profile = () => {
           </span>
         </li>
         <li className="flex items-center py-3">
-          <span>Remaining Capital</span>
+          <span>Balance</span>
           <div className="flex ml-auto">
             <svg
               xmlns="http://www.w3.org/2000/svg"
