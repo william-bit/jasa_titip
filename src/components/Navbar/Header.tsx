@@ -26,7 +26,7 @@ export const Header = () => {
             <Link href="/profile">
               <div className="overflow-hidden image">
                 <div className="flex items-center justify-center w-10 h-10 mx-auto bg-white border-2 rounded-full">
-                  <div className="text-xl font-bold text-red-500">
+                  <div className="text-2xl font-bold text-red-500 capitalize">
                     {userProfile.name.charAt(0)}
                   </div>
                 </div>

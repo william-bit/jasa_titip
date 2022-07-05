@@ -113,6 +113,7 @@ const InputForm = ({
       price: Array<string>;
       description: Array<string>;
       location: Array<string>;
+      image: Array<string>;
     };
   }
 

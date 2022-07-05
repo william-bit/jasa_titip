@@ -13,6 +13,7 @@ import { Profile } from "./pages/Profile";
 import Customer from "./pages/register/Customer";
 import Shop from "./pages/Shop";
 import Vendor from "./pages/register/Vendor";
+import { AdminProfile } from "./pages/admin/Profile";
 
 function App() {
   checkGetToken();
@@ -28,10 +29,14 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/register/vendor" element={<Vendor />} />
         <Route path="/register/customer" element={<Customer />} />
-        <Route path="/admin" element={<Admin />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/profile/ongoing" element={<Checkout />} />
+        <Route path="/profile/finish" element={<Checkout />} />
+        <Route path="/profile/rejected" element={<Checkout />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/admin" element={<Admin />} />
         <Route path="/admin/product" element={<Product />} />
+        <Route path="/admin/profile" element={<AdminProfile />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </>
