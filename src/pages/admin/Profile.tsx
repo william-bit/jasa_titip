@@ -59,11 +59,20 @@ export const AdminProfile = () => {
         setFormError({});
         reset();
         console.log("testReset");
+        toast("Success Post Picture" + err.message, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       },
       onError: (err: AxiosError) => {
         const errors = err.response?.data as ILaravelApiErrorReturn;
         setFormError(errors);
-        toast("Failed login " + err.message, {
+        toast("Failed Picture Post " + err.message, {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,

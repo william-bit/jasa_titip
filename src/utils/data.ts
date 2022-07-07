@@ -96,6 +96,14 @@ export const getListTransaction = (currentPage: number) => {
 export const getListProduct = (currentPage: number) => {
   return axios.get(Url.listProduct + "?page=" + currentPage); // credentials didn't match
 };
+export const getListProductVendor = (
+  currentPage: number,
+  id: string | undefined
+) => {
+  return axios.get(
+    Url.listProductVendor + "?page=" + currentPage + "&id=" + id
+  ); // credentials didn't match
+};
 export const getListVendor = (search: string) => {
   return axios.get(Url.listVendor + "?search=" + search); // credentials didn't match
 };
