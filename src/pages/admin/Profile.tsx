@@ -91,6 +91,8 @@ export const AdminProfile = () => {
     console.log(data);
   };
 
+  console.log(userProfile);
+
   const ProfileCard = () => (
     <div
       onClick={openModal}
@@ -114,7 +116,7 @@ export const AdminProfile = () => {
         {userProfile.name}
       </h1>
       <h3 className="leading-6 text-gray-600 font-lg text-semibold">
-        Status as{" "}
+        Status as
         {userProfile.role == 0 ? <span>Tenant</span> : <span>Renter</span>}
       </h3>
       <p className="text-sm leading-6 text-gray-500 hover:text-gray-600"></p>
