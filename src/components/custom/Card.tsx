@@ -24,7 +24,7 @@ const Guard = ({ children, id }: { children: ReactNode; id: number }) => {
     </>
   ) : (
     <Link
-      href={`/checkout/${id}`}
+      href={`/detail/${id}`}
       className="flex items-center justify-center w-10 h-10 p-2 mx-5 mb-4 text-white bg-black border border-gray-700 rounded-full hover:bg-gray-500 focus:outline-none focus:bg-gray-500"
     >
       {children}
@@ -33,6 +33,7 @@ const Guard = ({ children, id }: { children: ReactNode; id: number }) => {
 };
 const Card = ({ id, title, description, detail, src, price }: ICard) => {
   const userProfile = useStore((state) => state.userProfile);
+  console.log("what" + src);
   return (
     <div className="relative flex flex-row-reverse w-full p-2 my-2 border-2 border-gray-300 rounded-md shrink-0 h-44">
       {src && (

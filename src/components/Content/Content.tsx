@@ -1,8 +1,10 @@
 import { ShoppingCartIcon } from "@heroicons/react/outline";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
+import { useQuery } from "react-query";
 import { useStore } from "../../store/store";
-import { HomeDataCard, ICard } from "../../utils/data";
+import { getListVendor, HomeDataCard, ICard } from "../../utils/data";
 import { Link } from "../Links";
+import CardCustom from "../../components/custom/Card";
 
 const Guard = ({ children, id }: { children: ReactNode; id: number }) => {
   const userProfile = useStore((state) => state.userProfile);
@@ -69,13 +71,35 @@ export const CardSection = ({
     </div>
   </>
 );
+
 export const Content = () => {
+  const [search, setSearch] = useState("");
+
+  const { data, error, isError, isLoading, isFetching, refetch } = useQuery(
+    ["vendor", search],
+    () => getListVendor(search)
+  );
+  console.log(data);
+  const searchHandle = (value: string) => {
+    setSearch(value);
+  };
   return (
     <div className="flex justify-center">
       <div className="w-7/12 mt-5">
         <CardSection title="Recommendation" data={HomeDataCard}></CardSection>
-        <CardSection title="Traveler" data={HomeDataCard}></CardSection>
-        <CardSection title="Catalog" data={HomeDataCard}></CardSection>
+        <div className="mt-4 text-lg font-bold">Traveler</div>
+        <div className="grid w-full grid-cols-3 gap-4 justify-items-center">
+          {data?.data.resource.data.map((row: any, index: number) => (
+            <CardCustom
+              id={row.id}
+              src={row.photo}
+              title={row.name}
+              price={row.price}
+              description={row.location}
+              detail={row.description}
+            ></CardCustom>
+          ))}
+        </div>
       </div>
     </div>
   );
