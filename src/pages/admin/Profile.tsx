@@ -59,7 +59,7 @@ export const AdminProfile = () => {
         setFormError({});
         reset();
         console.log("testReset");
-        toast("Success Post Picture" + err.message, {
+        toast("Success Post Picture", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
