@@ -32,8 +32,6 @@ const Guard = ({ children, id }: { children: ReactNode; id: number }) => {
   );
 };
 const Card = ({ id, title, description, detail, src, price }: ICard) => {
-  const userProfile = useStore((state) => state.userProfile);
-  console.log("what" + src);
   return (
     <div className="relative flex flex-row-reverse w-full p-2 my-2 border-2 border-gray-300 rounded-md shrink-0 h-44">
       {src && (
@@ -49,7 +47,7 @@ const Card = ({ id, title, description, detail, src, price }: ICard) => {
         <div className="flex w-full h-full overflow-hidden image">
           <div className="flex items-center justify-center mx-auto bg-white ">
             <div className="font-bold capitalize text-9xl text-black-500">
-              {userProfile.name.charAt(0)}
+              {title.charAt(0)}
             </div>
           </div>
         </div>
