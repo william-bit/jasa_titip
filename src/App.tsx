@@ -29,7 +29,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/register/vendor" element={<Vendor />} />
         <Route path="/register/customer" element={<Customer />} />
-        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout/:productId" element={<Checkout />} />
         <Route path="/profile/ongoing" element={<Checkout />} />
         <Route path="/profile/finish" element={<Checkout />} />
         <Route path="/profile/rejected" element={<Checkout />} />

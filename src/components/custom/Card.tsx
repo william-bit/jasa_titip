@@ -10,8 +10,17 @@ interface ICard {
   src: string;
   price: string;
   id: number;
+  toCheckout?: boolean;
 }
-const Guard = ({ children, id }: { children: ReactNode; id: number }) => {
+const Guard = ({
+  children,
+  id,
+  toCheckout,
+}: {
+  children: ReactNode;
+  id: number;
+  toCheckout?: boolean;
+}) => {
   const userProfile = useStore((state) => state.userProfile);
   return !userProfile.name ? (
     <>
@@ -24,14 +33,22 @@ const Guard = ({ children, id }: { children: ReactNode; id: number }) => {
     </>
   ) : (
     <Link
-      href={`/detail/${id}`}
+      href={`/${toCheckout ? "checkout" : "detail"}/${id}`}
       className="flex items-center justify-center w-10 h-10 p-2 mx-5 mb-4 text-white bg-black border border-gray-700 rounded-full hover:bg-gray-500 focus:outline-none focus:bg-gray-500"
     >
       {children}
     </Link>
   );
 };
-const Card = ({ id, title, description, detail, src, price }: ICard) => {
+const Card = ({
+  id,
+  title,
+  description,
+  detail,
+  src,
+  price,
+  toCheckout,
+}: ICard) => {
   return (
     <div className="relative flex flex-row-reverse w-full p-2 my-2 border-2 border-gray-300 rounded-md shrink-0 h-44">
       {src && (
@@ -58,7 +75,7 @@ const Card = ({ id, title, description, detail, src, price }: ICard) => {
         <div className="text-xs text-justify">{detail}</div>
       </div>
       <div className="absolute flex items-end justify-start w-full h-full">
-        <Guard id={id}>
+        <Guard id={id} toCheckout={toCheckout}>
           <ShoppingCartIcon className="h-5" />
         </Guard>
       </div>

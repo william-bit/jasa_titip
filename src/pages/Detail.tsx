@@ -53,6 +53,7 @@ const Detail = () => {
                 <Sort></Sort>
                 <ListView
                   data={data}
+                  toCheckout={true}
                   error={error}
                   isLoading={isLoading}
                   isError={isError}

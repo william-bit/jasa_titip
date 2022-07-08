@@ -11,6 +11,7 @@ export class Url {
   public static readonly home = this.baseUrl + "/home";
   public static readonly transaction = this.baseUrl + "/home";
   public static readonly storeProduct = this.baseUrl + "/product";
+  public static readonly storeCheckout = this.baseUrl + "/checkout";
   public static readonly storeProfilePicVendor =
     this.baseUrl + "/vendor/picture";
   public static readonly detailProduct =
