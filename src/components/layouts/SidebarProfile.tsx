@@ -36,7 +36,7 @@ export default function SidebarProfile({ listMenu }: ISidebar) {
         onClick={handleLogout}
         className="flex items-center px-1 py-2 text-sm font-medium tracking-wide text-gray-800 rounded-md cursor-pointer hover:bg-gray-100"
       >
-        <div className="px-2">LogOut</div>
+        <a className="px-2">LogOut</a>
       </div>
     </div>
   );

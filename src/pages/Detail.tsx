@@ -13,8 +13,8 @@ const Detail = () => {
   const [search, setSearch] = useState("");
 
   const { data, error, isError, isLoading, isFetching, refetch } = useQuery(
-    ["trans", currentPage, id],
-    () => getListProductVendor(currentPage, id),
+    ["trans", currentPage, id, search],
+    () => getListProductVendor(currentPage, id, search),
     { keepPreviousData: true }
   );
   const config: Array<{ title: string; key: string; type?: string }> = [
@@ -32,6 +32,7 @@ const Detail = () => {
     setCurrentPage(value);
   };
   const searchHandle = (value: string) => {
+    console.log(value);
     setSearch(value);
   };
   return (

@@ -98,10 +98,17 @@ export const getListProduct = (currentPage: number) => {
 };
 export const getListProductVendor = (
   currentPage: number,
-  id: string | undefined
+  id: string | undefined,
+  search: string
 ) => {
   return axios.get(
-    Url.listProductVendor + "?page=" + currentPage + "&id=" + id
+    Url.listProductVendor +
+      "?page=" +
+      currentPage +
+      "&id=" +
+      id +
+      "&search=" +
+      search
   ); // credentials didn't match
 };
 export const getListVendor = (search: string) => {
