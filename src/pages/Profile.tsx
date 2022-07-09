@@ -5,8 +5,8 @@ import { useStore } from "../store/store";
 
 let listMenu = [
   { label: "Personal Info" },
-  { label: "Ongoing transaction" },
-  { label: "History Transaction" },
+  { label: "Ongoing Order" },
+  { label: "History Order" },
   { label: "History Request Product" },
 ];
 
@@ -28,7 +28,7 @@ export const Profile = () => {
       </h1>
       <h3 className="leading-6 text-gray-600 font-lg text-semibold">
         Status as{" "}
-        {userProfile.role == 0 ? <span>Tenant</span> : <span>Renter</span>}
+        {userProfile.role == 0 ? <span>Traveler</span> : <span>Customer</span>}
       </h3>
       <p className="text-sm leading-6 text-gray-500 hover:text-gray-600"></p>
       <ul className="px-3 py-2 mt-3 text-gray-600 bg-gray-100 divide-y rounded shadow-sm hover:text-gray-700 hover:shadow">
