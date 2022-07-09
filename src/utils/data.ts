@@ -89,6 +89,10 @@ export const getDetailVendor = (id: string | undefined) => {
   return axios.get(Url.detailVendor + "/" + id);
 };
 
+export const getListTransactionVendor = (currentPage: number) => {
+  return axios.get(Url.transactionVendor + "?page=" + currentPage); // credentials didn't match
+};
+
 export const getListShop = (search: string) => {
   return axios.get(Url.home + "?search=" + search);
 };

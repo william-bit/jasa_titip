@@ -15,6 +15,7 @@ import Shop from "./pages/Shop";
 import Vendor from "./pages/register/Vendor";
 import { AdminProfile } from "./pages/admin/Profile";
 import { Request } from "./pages/Request";
+import Report from "./pages/admin/Report";
 
 function App() {
   checkGetToken();
@@ -38,7 +39,7 @@ function App() {
         <Route path="/request/:id" element={<Request />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/product" element={<Product />} />
-        <Route path="/admin/report" element={<Product />} />
+        <Route path="/admin/report" element={<Report />} />
         <Route path="/admin/order" element={<Product />} />
         <Route path="/admin/request" element={<Product />} />
         <Route path="/admin/complain" element={<Product />} />
