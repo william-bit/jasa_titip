@@ -85,6 +85,10 @@ export const getDetailProduct = (id: string | undefined) => {
   return axios.get(Url.detailProduct + "/" + id);
 };
 
+export const getDetailVendor = (id: string | undefined) => {
+  return axios.get(Url.detailVendor + "/" + id);
+};
+
 export const getListShop = (search: string) => {
   return axios.get(Url.home + "?search=" + search);
 };

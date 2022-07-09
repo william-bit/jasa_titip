@@ -7,6 +7,7 @@ let listMenu = [
   { label: "Personal Info" },
   { label: "Ongoing transaction" },
   { label: "History Transaction" },
+  { label: "History Request Product" },
 ];
 
 export const Profile = () => {

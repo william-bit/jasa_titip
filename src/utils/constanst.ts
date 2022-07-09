@@ -9,6 +9,7 @@ export class Url {
   public static readonly shop = this.baseUrl + "/shop";
   public static readonly listVendor = this.baseUrl + "/vendor";
   public static readonly home = this.baseUrl + "/home";
+  public static readonly detailVendor = this.baseUrl + "/vendor/detail";
   public static readonly transaction = this.baseUrl + "/home";
   public static readonly storeProduct = this.baseUrl + "/product";
   public static readonly storeCheckout = this.baseUrl + "/checkout";

@@ -1,3 +1,8 @@
+import { useQuery } from "react-query";
+import { useParams } from "react-router-dom";
+import { getDetailVendor } from "../../utils/data";
+import { Link } from "../Links";
+
 interface ITextInput {
   label?: string;
   placeholder: string;
@@ -60,13 +65,25 @@ const TextInput = ({ label, placeholder }: ITextInput) => {
     </>
   );
 };
+const useGetVendor = (id: string | undefined) => {
+  return useQuery(["vendor", id], () => getDetailVendor(id));
+};
 const FormRequest = () => {
+  const { id } = useParams();
+  const { data: dataVendor } = useGetVendor(id);
+  console.log(dataVendor);
   return (
     <div className="w-1/4 bg-black shadow-md rounded-2xl ">
-      <div className="w-full py-2 text-2xl font-bold text-center text-white">
-        Request Barang
-      </div>
+      <Link
+        href={`/detail/${id}`}
+        className="block w-full py-2 text-2xl font-bold text-center text-white"
+      >
+        Request Product {dataVendor?.data.name}
+      </Link>
       <div className="w-full bg-gray-200 border-2 rounded-2xl">
+        <div className="w-full py-2 text-2xl font-bold text-center text-black">
+          Location {dataVendor?.data.address}
+        </div>
         <div className="px-5 py-3">
           <TextInput
             label="Pesanan"

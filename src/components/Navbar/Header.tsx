@@ -7,7 +7,7 @@ export const Header = () => {
   const userProfile = useStore((state) => state.userProfile);
   console.log(userProfile);
   return (
-    <div className="sticky top-0 flex justify-between px-8 py-4 text-white bg-red-600">
+    <div className="sticky top-0 z-10 flex justify-between px-8 py-4 text-white bg-red-600">
       <Link href="/">
         <div className="text-2xl font-extrabold cursor-pointer">TipBel.com</div>
       </Link>

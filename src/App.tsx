@@ -14,6 +14,7 @@ import Customer from "./pages/register/Customer";
 import Shop from "./pages/Shop";
 import Vendor from "./pages/register/Vendor";
 import { AdminProfile } from "./pages/admin/Profile";
+import { Request } from "./pages/Request";
 
 function App() {
   checkGetToken();
@@ -34,8 +35,13 @@ function App() {
         <Route path="/profile/finish" element={<Checkout />} />
         <Route path="/profile/rejected" element={<Checkout />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/request/:id" element={<Request />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/product" element={<Product />} />
+        <Route path="/admin/report" element={<Product />} />
+        <Route path="/admin/order" element={<Product />} />
+        <Route path="/admin/request" element={<Product />} />
+        <Route path="/admin/complain" element={<Product />} />
         <Route path="/admin/profile" element={<AdminProfile />} />
         <Route path="*" element={<Home />} />
       </Routes>
