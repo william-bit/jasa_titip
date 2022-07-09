@@ -90,7 +90,6 @@ const FormRequest = () => {
             placeholder="Product yang di minta"
           ></TextInput>
           <TextInput placeholder="Perkiraan harga"></TextInput>
-          <TextInput placeholder="Harga unit"></TextInput>
           <TextInput placeholder="Catatan"></TextInput>
           <FileUpload></FileUpload>
           <button className="w-full px-4 py-2 text-2xl font-bold text-white bg-black rounded-full">
