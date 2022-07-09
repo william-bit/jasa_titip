@@ -78,7 +78,7 @@ const FormRequest = () => {
         href={`/detail/${id}`}
         className="block w-full py-2 text-2xl font-bold text-center text-white"
       >
-        Request Product {dataVendor?.data.name}
+        Request Item {dataVendor?.data.name}
       </Link>
       <div className="w-full bg-gray-200 border-2 rounded-2xl">
         <div className="w-full py-2 text-2xl font-bold text-center text-black">
