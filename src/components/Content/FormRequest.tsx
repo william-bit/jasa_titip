@@ -85,15 +85,12 @@ const FormRequest = () => {
           Location {dataVendor?.data.address}
         </div>
         <div className="px-5 py-3">
-          <TextInput
-            label="Pesanan"
-            placeholder="Product yang di minta"
-          ></TextInput>
-          <TextInput placeholder="Perkiraan harga"></TextInput>
-          <TextInput placeholder="Catatan"></TextInput>
+          <TextInput label="Request" placeholder="Requested item"></TextInput>
+          <TextInput placeholder="Price prediction"></TextInput>
+          <TextInput placeholder="Note"></TextInput>
           <FileUpload></FileUpload>
           <button className="w-full px-4 py-2 text-2xl font-bold text-white bg-black rounded-full">
-            Kirim Penawaran
+            Submit
           </button>
         </div>
       </div>
