@@ -36,8 +36,8 @@ const Report = () => {
           isLoading={isLoading}
           isError={isError}
           isFetching={isFetching}
-          subTitle="List Room"
-          title="Room"
+          subTitle="List Transaction"
+          title="Transaction"
           handleChange={handleChange}
         ></TableCustom>
       </div>
