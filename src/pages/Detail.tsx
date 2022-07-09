@@ -56,7 +56,7 @@ const Detail = () => {
                     href={`/request/${id}`}
                     className="flex items-center justify-center w-40 px-2 py-1 mx-5 mb-4 text-white bg-black border border-gray-700 hover:bg-gray-500 focus:outline-none focus:bg-gray-500"
                   >
-                    Request Product
+                    Request Item
                   </Link>
                 </div>
                 <div className="flex justify-center w-full">
