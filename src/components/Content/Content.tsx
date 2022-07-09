@@ -86,7 +86,7 @@ export const Content = () => {
   return (
     <div className="flex justify-center">
       <div className="w-7/12 mt-5">
-        <CardSection title="Recommendation" data={HomeDataCard}></CardSection>
+        <CardSection title="Catalog" data={HomeDataCard}></CardSection>
         <div className="mt-4 text-lg font-bold">Traveler</div>
         <div className="grid w-full grid-cols-3 gap-4 justify-items-center">
           {data?.data.resource.data.map((row: any, index: number) => (
