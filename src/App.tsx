@@ -16,6 +16,7 @@ import Vendor from "./pages/register/Vendor";
 import { AdminProfile } from "./pages/admin/Profile";
 import { Request } from "./pages/Request";
 import Report from "./pages/admin/Report";
+import Index from "./pages/admin/Index";
 
 function App() {
   checkGetToken();
@@ -44,6 +45,7 @@ function App() {
         <Route path="/admin/request" element={<Product />} />
         <Route path="/admin/complain" element={<Product />} />
         <Route path="/admin/profile" element={<AdminProfile />} />
+        <Route path="/admin/dashboard" element={<Index />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </>

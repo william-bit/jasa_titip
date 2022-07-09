@@ -20,7 +20,7 @@ const List = () => {
   };
   return (
     <div className="px-10 mt-4">
-      <div className="font-bold">Searching Vendor</div>
+      <div className="font-bold">Searching Traveler</div>
       <div className="flex mt-5">
         <div className="w-3/12 pr-10">
           <Location></Location>
