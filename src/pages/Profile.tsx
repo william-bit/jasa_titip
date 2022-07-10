@@ -5,8 +5,8 @@ import { useStore } from "../store/store";
 
 let listMenu = [
   { label: "Personal Info" },
-  { label: "Ongoing Order" },
-  { label: "History Order" },
+  { label: "Order List" },
+  { label: "Transaction History" },
   { label: "History Request Product" },
 ];
 
