@@ -27,23 +27,37 @@ const RequestAdmin = () => {
   const handleChange = (value: number) => {
     setCurrentPage(value);
   };
+  const [typeAction, setTypeAction] = useState("");
 
   const approvalPost = useMutation(
     (dataPost: { type: string; id: string }) => {
+      setTypeAction(dataPost.type);
       return storeApprovalRequest(dataPost.type, dataPost.id);
     },
     {
       onSuccess: (res) => {
         console.log(res);
-        toast("Success Approve ", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
+        if (typeAction === "2") {
+          toast("Success Approve ", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+        } else {
+          toast("Success Reject ", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+        }
         refetch();
       },
       onError: (err: AxiosError) => {
