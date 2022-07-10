@@ -194,7 +194,7 @@ const InputForm = ({
               {item}
             </div>
           ))}
-          <TextInput
+          {/* <TextInput
             name="location"
             placeholder="location"
             register={register}
@@ -203,7 +203,7 @@ const InputForm = ({
             <div key={i} className="text-sm text-center text-red-600">
               {item}
             </div>
-          ))}
+          ))} */}
           <TextInput
             name="description"
             placeholder="Description"

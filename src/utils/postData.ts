@@ -6,7 +6,7 @@ export interface IProductParam {
   price: string;
   image: string;
   description: string;
-  location: string;
+  location?: string;
 }
 export const storeProduct = (formData: FormData) => {
   return axios.post(Url.storeProduct, formData, {
