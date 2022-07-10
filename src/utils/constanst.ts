@@ -20,6 +20,7 @@ export class Url {
   public static readonly storeRequest = this.baseUrl + "/vendor/request";
   public static readonly approvalRequest =
     this.baseUrl + "/vendor/request/approval";
+  public static readonly approvalOrder = this.baseUrl + "/transaction/approval";
   public static readonly storeProfilePicVendor =
     this.baseUrl + "/vendor/picture";
   public static readonly detailProduct =

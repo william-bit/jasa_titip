@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { useQuery } from "react-query";
+import { useMutation, useQuery } from "react-query";
 import InputForm from "../../components/custom/InputForm";
 import { TableCustom } from "../../components/custom/Table";
 import Admin from "../../components/layouts/Admin";
 import { getListTransactionVendor } from "../../utils/data";
+import { storeApprovalOrder } from "../../utils/postData";
 const Order = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -25,6 +26,13 @@ const Order = () => {
     setCurrentPage(value);
   };
 
+  const approvalPost = useMutation((dataPost: { type: string; id: string }) => {
+    return storeApprovalOrder(dataPost.type, dataPost.id);
+  });
+  const handleApproval = (id: string, action: string) => {
+    approvalPost.mutate({ type: action, id });
+  };
+
   return (
     <Admin>
       <div className="flex-initial w-full overflow-auto">
@@ -39,6 +47,9 @@ const Order = () => {
           subTitle="List Order"
           title="Order"
           handleChange={handleChange}
+          handleCustom={(id: string, action: string) =>
+            handleApproval(id, action)
+          }
         ></TableCustom>
       </div>
     </Admin>

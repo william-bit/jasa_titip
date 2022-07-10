@@ -80,7 +80,7 @@ export const storeApprovalOrder = (
   id: string | undefined
 ) => {
   return axios.post(
-    Url.storeRequest + `/${id}`,
+    Url.approvalOrder + `/${id}`,
     { type },
     {
       headers: {

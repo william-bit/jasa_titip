@@ -7,7 +7,7 @@ import {
   UseFormReset,
 } from "react-hook-form";
 import { useMutation, useQuery } from "react-query";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { getDetailVendor } from "../../utils/data";
 import { IRequestParam, storeRequest } from "../../utils/postData";
@@ -93,12 +93,15 @@ const usePostRequest = (
 const FormRequest = () => {
   const { id } = useParams();
   const { data: dataVendor } = useGetVendor(id);
+  let navigate = useNavigate();
   console.log(dataVendor);
   const { register, handleSubmit, reset } = useForm<IRequestParam>();
   const { isLoading: isPosting, mutate: requestPost } = usePostRequest(
     id,
     reset,
-    () => console.log("success"),
+    () => {
+      navigate(`/detail/${id}`);
+    },
     () => console.log("fail")
   );
 

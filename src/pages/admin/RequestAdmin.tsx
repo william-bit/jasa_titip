@@ -1,5 +1,7 @@
+import { AxiosError } from "axios";
 import { useState } from "react";
 import { useMutation, useQuery } from "react-query";
+import { toast } from "react-toastify";
 import { TableCustom } from "../../components/custom/Table";
 import Admin from "../../components/layouts/Admin";
 import {
@@ -10,7 +12,7 @@ import { storeApprovalRequest } from "../../utils/postData";
 const RequestAdmin = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
-  const { data, error, isError, isLoading, isFetching } = useQuery(
+  const { data, error, isError, isLoading, isFetching, refetch } = useQuery(
     ["vendorRequest", currentPage],
     () => getListRequestVendor(currentPage),
     { keepPreviousData: true }
@@ -26,9 +28,37 @@ const RequestAdmin = () => {
     setCurrentPage(value);
   };
 
-  const approvalPost = useMutation((dataPost: { type: string; id: string }) => {
-    return storeApprovalRequest(dataPost.type, dataPost.id);
-  });
+  const approvalPost = useMutation(
+    (dataPost: { type: string; id: string }) => {
+      return storeApprovalRequest(dataPost.type, dataPost.id);
+    },
+    {
+      onSuccess: (res) => {
+        console.log(res);
+        toast("Success Approve ", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        refetch();
+      },
+      onError: (err: AxiosError) => {
+        toast("Failed Approve " + err.message, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      },
+    }
+  );
   const handleApproval = (id: string, action: string) => {
     approvalPost.mutate({ type: action, id });
   };
