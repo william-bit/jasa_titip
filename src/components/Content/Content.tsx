@@ -95,7 +95,7 @@ export const Content = () => {
               src={row.photo}
               title={row.name}
               price={row.price}
-              description={row.location}
+              description={row.vendor?.address}
               detail={row.description}
             ></CardCustom>
           ))}
