@@ -27,17 +27,13 @@ const RequestAdmin = () => {
   const handleChange = (value: number) => {
     setCurrentPage(value);
   };
-  const [typeAction, setTypeAction] = useState("");
-
   const approvalPost = useMutation(
     (dataPost: { type: string; id: string }) => {
-      setTypeAction(dataPost.type);
       return storeApprovalRequest(dataPost.type, dataPost.id);
     },
     {
-      onSuccess: (res) => {
-        console.log(res);
-        if (typeAction === "2") {
+      onSuccess: (res, { type }) => {
+        if (type == "2") {
           toast("Success Approve ", {
             position: "top-right",
             autoClose: 5000,
