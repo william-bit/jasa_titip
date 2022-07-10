@@ -65,6 +65,15 @@ const usePostRequest = (
     {
       onSuccess: (res) => {
         reset();
+        toast("Success Request", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
         onSuccess();
       },
       onError: (err: AxiosError) => {
