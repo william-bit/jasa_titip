@@ -84,7 +84,7 @@ export const Selection = () => {
         aria-label="Default select example"
       >
         <option value="1" className="text-xs">
-          Day
+          Month
         </option>
       </select>
     </div>

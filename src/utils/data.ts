@@ -93,6 +93,10 @@ export const getListTransactionVendor = (currentPage: number) => {
   return axios.get(Url.transactionVendor + "?page=" + currentPage); // credentials didn't match
 };
 
+export const getListRequestVendor = (currentPage: number) => {
+  return axios.get(Url.requestVendor + "?page=" + currentPage); // credentials didn't match
+};
+
 export const getListShop = (search: string) => {
   return axios.get(Url.home + "?search=" + search);
 };

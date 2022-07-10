@@ -11,8 +11,8 @@ const TdCustom = ({
   if (type == "image") {
     return (
       <div className="flex items-center">
-        <div className="flex-shrink-0 w-10 h-10">
-          <img className="w-full h-full rounded-full" src={value} alt="" />
+        <div className="flex-shrink-0 w-32 h-32">
+          <img className="w-full h-full" src={value} alt="" />
         </div>
       </div>
     );
@@ -25,15 +25,13 @@ const TdCustom = ({
       label = "Not Active";
     }
     return (
-      <td className="px-5 py-5 text-sm bg-white border-gray-200">
-        <span className="relative inline-block px-3 py-1 font-semibold leading-tight text-green-900">
-          <span
-            aria-hidden
-            className={`absolute inset-0 ${color} rounded-full opacity-50`}
-          ></span>
-          <span className="relative">{label}</span>
-        </span>
-      </td>
+      <span className="relative inline-block px-3 py-1 font-semibold leading-tight text-green-900">
+        <span
+          aria-hidden
+          className={`absolute inset-0 ${color} rounded-full opacity-50`}
+        ></span>
+        <span className="relative">{label}</span>
+      </span>
     );
   }
   return <p className="text-gray-900 whitespace-no-wrap">{value}</p>;
@@ -41,10 +39,19 @@ const TdCustom = ({
 const TrCustom = ({
   row,
   config,
+  isDelete,
+  customAction,
+  handleDelete,
+  handleCustomAction,
 }: {
   row: any;
   config: Array<{ title: string; key: string; type?: string }>;
+  isDelete?: boolean;
+  customAction?: Array<{ label: string; action: string; color: string }>;
+  handleCustomAction?: (id: string, action: string) => void;
+  handleDelete?: (id: number) => void;
 }) => {
+  console.log(customAction);
   return (
     <tr key={row.id}>
       {config.map((valueConfig, indexConfig) => (
@@ -58,6 +65,58 @@ const TrCustom = ({
           ></TdCustom>
         </td>
       ))}
+      {isDelete && handleDelete && (
+        <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+          <svg
+            onClick={() => handleDelete(row.id)}
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-6 h-6 text-red-400 cursor-pointer hover:text-red-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </td>
+      )}
+      {customAction && handleCustomAction && (
+        <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+          {customAction.map((_value, index) => {
+            let bgColor = "";
+            let hoverBgColor = "";
+            switch (_value.color) {
+              case "red":
+                bgColor = "bg-red-500";
+                hoverBgColor = "hover:bg-red-400";
+                break;
+              case "blue":
+                bgColor = "bg-blue-500";
+                hoverBgColor = "hover:bg-blue-400";
+                break;
+              case "green":
+                bgColor = "bg-green-500";
+                hoverBgColor = "hover:bg-green-400";
+                break;
+              default:
+                break;
+            }
+            return (
+              <button
+                key={index}
+                className={`block w-full px-4 ${bgColor} ${hoverBgColor} py-1 my-1 cursor-pointer text-sm font-semibold text-center transition duration-150  rounded text-indigo-50 `}
+                onClick={() => handleCustomAction(row.id, _value.action)}
+              >
+                {_value.label}
+              </button>
+            );
+          })}
+        </td>
+      )}
     </tr>
   );
 };
@@ -78,13 +137,16 @@ interface ITableCustom {
   isLoading: boolean;
   isError: boolean;
   isFetching: boolean;
+  isDelete?: boolean;
+  handleDelete?: (id: number) => void;
+  handleCustom?: (id: string, action: string) => void;
   error: Error | unknown;
   currentPage: number;
   handleChange: (value: number) => void;
 }
 
 export const TableCustom = (props: ITableCustom) => {
-  console.log(props.currentPage);
+  console.log(props.data?.data.resource);
   return (
     <div className="w-full p-8 bg-white border-2 ">
       <div className="flex items-center justify-between pb-6 ">
@@ -131,6 +193,17 @@ export const TableCustom = (props: ITableCustom) => {
                       {row.title}
                     </th>
                   ))}
+                  {props.isDelete && props.handleDelete && (
+                    <th className="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200">
+                      Deactivate
+                    </th>
+                  )}
+                  {props.handleCustom &&
+                    props.data?.data?.table?.customAction && (
+                      <th className="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200">
+                        Custom Action
+                      </th>
+                    )}
                 </tr>
               </thead>
               <tbody>
@@ -150,14 +223,32 @@ export const TableCustom = (props: ITableCustom) => {
                   </tr>
                 ) : null}
                 {!props.isLoading &&
+                  !props.isFetching &&
+                  !props.isError &&
+                  !props.data?.data.resource.data && (
+                    <tr key={1}>
+                      <td align="center" colSpan={6}>
+                        Data Empty
+                      </td>
+                    </tr>
+                  )}
+                {!props.isLoading &&
                 !props.isFetching &&
                 !props.isError &&
-                props.data != undefined
+                props.data &&
+                props.data.data.resource.data
                   ? props.data?.data.resource.data.map(
                       (row: any, index: number) => (
                         <TrCustom
                           row={row}
+                          handleDelete={props.handleDelete}
+                          isDelete={props.isDelete}
                           config={props.config}
+                          customAction={
+                            props.handleCustom &&
+                            props.data?.data.table.customAction
+                          }
+                          handleCustomAction={props.handleCustom}
                           key={index}
                         ></TrCustom>
                       )

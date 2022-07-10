@@ -44,3 +44,48 @@ export const storeCheckout = (formData: FormData) => {
     },
   });
 };
+
+export interface IRequestParam {
+  name: string;
+  price: string;
+  description: string;
+  image: string;
+}
+
+export const storeRequest = (formData: FormData, id: string | undefined) => {
+  return axios.post(Url.storeRequest + `/${id}`, formData, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
+};
+
+export const storeApprovalRequest = (
+  type: string | undefined,
+  id: string | undefined
+) => {
+  return axios.post(
+    Url.approvalRequest + `/${id}`,
+    { type },
+    {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    }
+  );
+};
+
+export const storeApprovalOrder = (
+  type: string | undefined,
+  id: string | undefined
+) => {
+  return axios.post(
+    Url.storeRequest + `/${id}`,
+    { type },
+    {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    }
+  );
+};
