@@ -8,5 +8,5 @@ export const listMenu: Array<IListMenu> = [
   { label: "Order List", href: "/admin/order" },
   { label: "Product", href: "/admin/product" },
   { label: "Transaction History", href: "/admin/report" },
-  { label: "Complain List", href: "/admin/complain" },
+  // { label: "Complain List", href: "/admin/complain" },
 ];
