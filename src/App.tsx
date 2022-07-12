@@ -25,6 +25,8 @@ import Order from "./pages/admin/Order";
 import Complain from "./pages/admin/Complain";
 import { Invoice } from "./pages/invoice/Invoice";
 import { Transaction } from "./pages/Transaction";
+import { OrderUser } from "./pages/OrderUser";
+import { RequestUser } from "./pages/RequestUser";
 
 function App() {
   checkGetToken();
@@ -47,6 +49,8 @@ function App() {
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/transaction" element={<Transaction />} />
+        <Route path="/request" element={<RequestUser />} />
+        <Route path="/order" element={<OrderUser />} />
         <Route path="/register" element={<Register />} />
         <Route path="/register/vendor" element={<Vendor />} />
         <Route path="/register/customer" element={<Customer />} />

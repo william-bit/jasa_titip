@@ -14,7 +14,7 @@ let listMenu = [
   { label: "History Request Product", href: "/request" },
 ];
 
-export const Transaction = () => {
+export const RequestUser = () => {
   const userProfile = useStore((state) => state.userProfile);
   const userJoin = new Date(userProfile.join);
 
@@ -53,10 +53,9 @@ export const Transaction = () => {
             isLoading={isLoading}
             isError={isError}
             isFetching={isFetching}
-            subTitle="List Transaction"
-            title="Transaction"
+            subTitle="List Request"
+            title="Request"
             handleChange={handleChange}
-            handleCustom={(id, action) => navigate(`/invoice/${id}`)}
           ></TableCustom>
         </div>
       </div>
