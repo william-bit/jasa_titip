@@ -53,8 +53,8 @@ export const Transaction = () => {
             isLoading={isLoading}
             isError={isError}
             isFetching={isFetching}
-            subTitle="List Transaction"
-            title="Transaction"
+            subTitle="List Transaction History"
+            title="Transaction history"
             handleChange={handleChange}
             handleCustom={(id, action) => navigate(`/invoice/${id}`)}
           ></TableCustom>
