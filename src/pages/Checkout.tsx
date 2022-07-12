@@ -314,14 +314,14 @@ export const Checkout = () => {
               </div>
               <div className="p-4 mt-4">
                 <h2 className="text-xl font-bold">Discount</h2>
-                <div className="flex mt-2">
+                <div className="flex flex-1 mt-2">
                   <input
                     type={"text"}
                     placeholder="Discount code"
-                    className="border border-gray-500 "
+                    className="w-full px-2 border border-gray-500"
                   ></input>
-                  <button className="flex items-center justify-center w-10 h-10 p-2 font-bold text-white bg-black border border-gray-700 hover:bg-gray-500 focus:outline-none focus:bg-gray-500">
-                    Add
+                  <button className="flex items-center justify-center h-10 p-2 font-bold text-white bg-black border border-gray-700 hover:bg-gray-500 focus:outline-none focus:bg-gray-500">
+                    Submit
                   </button>
                 </div>
               </div>
