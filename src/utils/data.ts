@@ -126,3 +126,7 @@ export const getListProductVendor = (
 export const getListVendor = (search: string) => {
   return axios.get(Url.listVendor + "?search=" + search); // credentials didn't match
 };
+
+export const getDetailTransaction = (id: string | undefined) => {
+  return axios.get(Url.invoice + "/" + id);
+};

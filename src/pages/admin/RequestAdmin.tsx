@@ -2,7 +2,7 @@ import { AxiosError } from "axios";
 import { useState } from "react";
 import { useMutation, useQuery } from "react-query";
 import { toast } from "react-toastify";
-import { TableCustom } from "../../components/custom/Table";
+import { TableCustom } from "../../components/custom/table/Table";
 import Admin from "../../components/layouts/Admin";
 import {
   getListRequestVendor,

@@ -7,10 +7,11 @@ export class Url {
   public static readonly listProduct = this.baseUrl + "/product";
   public static readonly listProductVendor = this.baseUrl + "/product-vendor";
   public static readonly shop = this.baseUrl + "/shop";
+  public static readonly invoice = this.baseUrl + "/order/detail";
   public static readonly listVendor = this.baseUrl + "/vendor";
   public static readonly home = this.baseUrl + "/home";
   public static readonly detailVendor = this.baseUrl + "/vendor/detail";
-  public static readonly transaction = this.baseUrl + "/home";
+  public static readonly transaction = this.baseUrl + "/transaction/get";
   public static readonly transactionVendor =
     this.baseUrl + "/transaction/get-vendor";
   public static readonly requestVendor =

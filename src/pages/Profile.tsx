@@ -4,10 +4,10 @@ import { Header } from "../components/Navbar/Header";
 import { useStore } from "../store/store";
 
 let listMenu = [
-  { label: "Personal Info" },
-  { label: "Order List" },
-  { label: "Transaction History" },
-  { label: "History Request Product" },
+  { label: "Personal Info", href: "/profile" },
+  { label: "Order List", href: "/order" },
+  { label: "Transaction History", href: "/transaction" },
+  { label: "History Request Product", href: "/request" },
 ];
 
 export const Profile = () => {

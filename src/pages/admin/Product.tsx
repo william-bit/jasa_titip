@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
 import InputForm from "../../components/custom/InputForm";
-import { TableCustom } from "../../components/custom/Table";
+import { TableCustom } from "../../components/custom/table/Table";
 import Admin from "../../components/layouts/Admin";
 import { getListProduct } from "../../utils/data";
 const Product = () => {

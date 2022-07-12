@@ -1,4 +1,5 @@
 import { Popover } from "@headlessui/react";
+import { ShoppingCartIcon } from "@heroicons/react/outline";
 import { useNavigate } from "react-router-dom";
 import { IProfile, useStore } from "../../store/store";
 import { Link } from "../Links";
