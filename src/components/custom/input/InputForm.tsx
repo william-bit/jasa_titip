@@ -32,15 +32,17 @@ const InputForm = ({
       </div>
       <div className="w-full ">
         <form className="px-5 py-3" onSubmit={handleSubmit}>
-          <TextInput
-            label="Tata Rias add /edit product"
-            name="id"
-            type="text"
-            disabled={true}
-            error={formError?.id}
-            placeholder="Id Product (auto generate)"
-            register={register}
-          ></TextInput>
+          <div className="hidden">
+            <TextInput
+              label="Tata Rias add /edit product"
+              name="id"
+              type="text"
+              disabled={true}
+              error={formError?.id}
+              placeholder="Id Product (auto generate)"
+              register={register}
+            ></TextInput>
+          </div>
           <TextInput
             name="name"
             type="text"
