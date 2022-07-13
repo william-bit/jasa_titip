@@ -15,6 +15,7 @@ export const TdCustom = ({
     );
   }
   if (type == "status") {
+    console.log(value);
     let color = "bg-green-200";
     let label = "Active";
     if (value == 0) {

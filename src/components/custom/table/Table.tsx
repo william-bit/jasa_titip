@@ -101,6 +101,7 @@ export const TableCustom = (props: ITableCustom) => {
                       (row: any, index: number) => (
                         <TrCustom
                           row={row}
+                          setting={props.data?.data?.table?.rowSetting}
                           handleDelete={props.handleDelete}
                           handleEdit={props.handleEdit}
                           isDelete={props.isDelete}

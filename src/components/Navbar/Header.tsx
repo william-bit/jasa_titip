@@ -23,16 +23,20 @@ export const Header = () => {
             {userProfile.role == 1 && (
               <Link href="/admin/product">Traveler Panel</Link>
             )}
-            {userProfile.role == 0 && <Link href="/shop">Traveler</Link>}
-            <Link href="/profile">
-              <div className="overflow-hidden image">
-                <div className="flex items-center justify-center w-10 h-10 mx-auto bg-white border-2 rounded-full">
-                  <div className="text-2xl font-bold text-red-500 capitalize">
-                    {userProfile.name.charAt(0)}
+            {userProfile.role == 0 && (
+              <>
+                <Link href="/shop">Traveler</Link>
+                <Link href="/profile">
+                  <div className="overflow-hidden image">
+                    <div className="flex items-center justify-center w-10 h-10 mx-auto bg-white border-2 rounded-full">
+                      <div className="text-2xl font-bold text-red-500 capitalize">
+                        {userProfile.name.charAt(0)}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </Link>
+                </Link>
+              </>
+            )}
           </>
         )}
       </div>
