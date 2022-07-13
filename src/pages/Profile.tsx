@@ -1,3 +1,4 @@
+import { PlusCircleIcon } from "@heroicons/react/outline";
 import { ProfileForm } from "../components/custom/ProfileForm";
 import SidebarProfile from "../components/layouts/SidebarProfile";
 import { Header } from "../components/Navbar/Header";
@@ -53,7 +54,7 @@ export const Profile = () => {
         </li>
         <li className="flex items-center py-3">
           <span>Balance</span>
-          <div className="flex ml-auto">
+          <div className="flex items-center ml-auto">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-6 h-6"
@@ -69,6 +70,9 @@ export const Profile = () => {
               />
             </svg>
             <span className="ml-2 font-bold"> 20.000.000</span>
+            <span className="px-1 py-1 text-sm text-white rounded-full ">
+              <PlusCircleIcon className="w-6 h-6 text-gray-700 animate-pulse "></PlusCircleIcon>
+            </span>
           </div>
         </li>
       </ul>
