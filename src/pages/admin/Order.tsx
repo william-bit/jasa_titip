@@ -1,5 +1,7 @@
+import { AxiosError } from "axios";
 import { useState } from "react";
 import { useMutation, useQuery } from "react-query";
+import { toast } from "react-toastify";
 import InputForm from "../../components/custom/InputForm";
 import { TableCustom } from "../../components/custom/table/Table";
 import Admin from "../../components/layouts/Admin";
@@ -33,6 +35,26 @@ const Order = () => {
     {
       onSuccess: (res) => {
         refetch();
+        toast("Success Submit ", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      },
+      onError: (err: AxiosError) => {
+        toast("Failed Submit " + err.message, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       },
     }
   );
