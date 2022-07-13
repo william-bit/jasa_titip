@@ -160,7 +160,7 @@ export const Checkout = () => {
   };
 
   const tax = (day * data?.data.price * 11) / 100;
-  console.log(data);
+  const [paymentOption, setPayment] = useState("balance");
   return (
     <div>
       <Header></Header>
@@ -175,15 +175,34 @@ export const Checkout = () => {
             <h2 className="mb-4 font-bold md:text-xl text-heading ">
               Payment Detail
             </h2>
+
             <span className="mb-4 md:text-xl text-heading ">
+              Payment Option :
+            </span>
+            <select
+              onChange={(e) => setPayment(e.target.value)}
+              className="w-full px-2 border border-gray-500 rounded"
+            >
+              <option value={"balance"}>TipBel Balance</option>
+              <option value={"transfer"}>Transfer</option>
+            </select>
+            <span
+              className={`${
+                paymentOption === "balance" ? "" : "hidden"
+              } mb-4 md:text-xl text-heading mt-4`}
+            >
               Your Balance : 20.000.000
             </span>
             <form
               onSubmit={handleSubmit(onSubmit)}
               className="justify-center w-full mx-auto"
             >
-              <div className="">
-                <div className="space-x-0 lg:flex lg:space-x-4">
+              <div>
+                <div
+                  className={`${
+                    paymentOption === "transfer" ? "flex" : "hidden"
+                  } space-x-0  lg:space-x-4`}
+                >
                   <div className="w-full">
                     <label className="block mb-3 text-sm font-semibold text-gray-500">
                       Payment Proof
