@@ -30,6 +30,7 @@ export const TrCustom = ({
         >
           <TdCustom
             type={valueConfig.type}
+            setting={setting}
             value={row[valueConfig.key]}
           ></TdCustom>
         </td>

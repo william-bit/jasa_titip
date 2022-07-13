@@ -1,9 +1,11 @@
 export const TdCustom = ({
   type,
   value,
+  setting,
 }: {
   type: string | undefined;
   value: any;
+  setting: any;
 }) => {
   if (type == "image") {
     return (
@@ -15,20 +17,21 @@ export const TdCustom = ({
     );
   }
   if (type == "status") {
-    console.log(value);
+    let colorSetting = setting?.status[value]?.color;
     let color = "bg-green-200";
-    let label = "Active";
-    if (value == 0) {
+    if (colorSetting == "red") {
       color = "bg-red-200";
-      label = "Not Active";
+    }
+    if (colorSetting == "blue") {
+      color = "bg-blue-200";
     }
     return (
-      <span className="relative inline-block px-3 py-1 font-semibold leading-tight text-green-900">
+      <span className="relative inline-block px-3 py-1 font-semibold leading-tight ">
         <span
           aria-hidden
           className={`absolute inset-0 ${color} rounded-full opacity-50`}
         ></span>
-        <span className="relative">{label}</span>
+        <span className="relative">{setting?.status[value]?.label}</span>
       </span>
     );
   }
