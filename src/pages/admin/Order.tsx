@@ -26,9 +26,16 @@ const Order = () => {
     setCurrentPage(value);
   };
 
-  const approvalPost = useMutation((dataPost: { type: string; id: string }) => {
-    return storeApprovalOrder(dataPost.type, dataPost.id);
-  });
+  const approvalPost = useMutation(
+    (dataPost: { type: string; id: string }) => {
+      return storeApprovalOrder(dataPost.type, dataPost.id);
+    },
+    {
+      onSuccess: (res) => {
+        refetch();
+      },
+    }
+  );
   const handleApproval = (id: string, action: string) => {
     approvalPost.mutate({ type: action, id });
   };
