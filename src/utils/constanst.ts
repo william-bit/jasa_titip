@@ -13,6 +13,8 @@ export class Url {
   public static readonly home = this.baseUrl + "/home";
   public static readonly detailVendor = this.baseUrl + "/vendor/detail";
   public static readonly transaction = this.baseUrl + "/transaction/get";
+  public static readonly transactionFinish =
+    this.baseUrl + "/transaction/get/finish";
   public static readonly transactionVendor =
     this.baseUrl + "/transaction/get-vendor";
   public static readonly requestVendor =

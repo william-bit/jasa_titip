@@ -19,7 +19,8 @@ const RequestAdmin = () => {
   );
   const config: Array<{ title: string; key: string; type?: string }> = [
     { title: "Photo Product", key: "photo", type: "image" },
-    { title: "Name Customer", key: "custName" },
+    { title: "Customer Name", key: "custName" },
+    { title: "Product Name", key: "name" },
     { title: "Total", key: "price" },
     { title: "Status", key: "status", type: "status" },
   ];

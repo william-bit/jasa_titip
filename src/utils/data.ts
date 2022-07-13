@@ -104,6 +104,9 @@ export const getListShop = (search: string) => {
 export const getListTransaction = (currentPage: number) => {
   return axios.get(Url.transaction + "?page=" + currentPage); // credentials didn't match
 };
+export const getListTransactionFinish = (currentPage: number) => {
+  return axios.get(Url.transaction + "?page=" + currentPage); // credentials didn't match
+};
 
 export const getListProduct = (currentPage: number) => {
   return axios.get(Url.listProduct + "?page=" + currentPage); // credentials didn't match
