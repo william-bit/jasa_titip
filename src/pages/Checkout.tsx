@@ -175,6 +175,9 @@ export const Checkout = () => {
             <h2 className="mb-4 font-bold md:text-xl text-heading ">
               Payment Detail
             </h2>
+            <span className="mb-4 md:text-xl text-heading ">
+              Your Balance : 20.000.000
+            </span>
             <form
               onSubmit={handleSubmit(onSubmit)}
               className="justify-center w-full mx-auto"
