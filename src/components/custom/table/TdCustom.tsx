@@ -16,7 +16,7 @@ export const TdCustom = ({
       </div>
     );
   }
-  if (type == "status") {
+  if (type == "status" && setting?.status && value in setting?.status) {
     let colorSetting = setting?.status[value]?.color;
     let color = "bg-green-200";
     if (colorSetting == "red") {
