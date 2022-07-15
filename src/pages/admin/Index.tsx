@@ -30,7 +30,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: "Order Bar Chart",
+      text: "Total Transaction",
     },
   },
 };
