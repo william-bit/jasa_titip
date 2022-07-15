@@ -58,8 +58,8 @@ const Index = () => {
       <div className="flex flex-col w-full h-full">
         <div className="flex justify-center w-full border rounded-lg">
           <div className="flex flex-col justify-center p-4">
-            <div className="mt-5 text-5xl text-center">Ranting</div>
-            <div className="mt-6 text-5xl text-center">4</div>
+            <div className="text-5xl text-center">Ranting</div>
+            <div className="mt-5 text-5xl text-center">4</div>
             <div className="flex justify-center">
               <ReactStars
                 count={5}
