@@ -34,7 +34,7 @@ const InputForm = ({
         <form className="px-5 py-3" onSubmit={handleSubmit}>
           <div className="hidden">
             <TextInput
-              label="Tata Rias add /edit product"
+              label="Add /edit product"
               name="id"
               type="text"
               disabled={true}
@@ -59,7 +59,7 @@ const InputForm = ({
           ></TextInput>
           <TextInput
             name="location"
-            placeholder="location"
+            placeholder="country"
             error={formError?.location}
             register={register}
           ></TextInput>

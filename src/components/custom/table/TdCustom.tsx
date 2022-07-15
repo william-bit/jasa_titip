@@ -16,8 +16,13 @@ export const TdCustom = ({
       </div>
     );
   }
-  if (type == "status" && setting?.status && value in setting?.status) {
-    let colorSetting = setting?.status[value]?.color;
+  console.log("wtf", setting.statusSetting);
+  if (
+    type == "status" &&
+    setting?.statusSetting &&
+    value in setting?.statusSetting
+  ) {
+    let colorSetting = setting?.statusSetting[value]?.color;
     let color = "bg-green-200";
     if (colorSetting == "red") {
       color = "bg-red-200";
@@ -31,7 +36,7 @@ export const TdCustom = ({
           aria-hidden
           className={`absolute inset-0 ${color} rounded-full opacity-50`}
         ></span>
-        <span className="relative">{setting?.status[value]?.label}</span>
+        <span className="relative">{setting?.statusSetting[value]?.label}</span>
       </span>
     );
   }

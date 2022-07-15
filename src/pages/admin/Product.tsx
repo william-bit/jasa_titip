@@ -157,7 +157,7 @@ const Product = () => {
           isFetching={isFetching}
           handleEdit={handleEdit}
           subTitle="List Product"
-          title="Tata Rias Product"
+          title="Product"
           handleChange={handleChange}
         ></TableCustom>
       </div>
