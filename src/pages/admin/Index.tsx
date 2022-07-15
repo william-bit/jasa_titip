@@ -59,12 +59,12 @@ const Index = () => {
         <div className="flex justify-center w-full border rounded-lg">
           <div className="flex flex-col justify-center p-4">
             <div className="mt-5 text-5xl text-center">Ranting</div>
-            <div className="mt-6 text-5xl text-center">3</div>
+            <div className="mt-6 text-5xl text-center">4</div>
             <div className="flex justify-center">
               <ReactStars
                 count={5}
                 onChange={ratingChanged}
-                value={3}
+                value={4}
                 size={24}
                 color2={"#ffd700"}
               />
