@@ -16,7 +16,6 @@ export const TdCustom = ({
       </div>
     );
   }
-  console.log("wtf", setting.statusSetting);
   if (
     type == "status" &&
     setting?.statusSetting &&

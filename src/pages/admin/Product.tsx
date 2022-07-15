@@ -101,7 +101,6 @@ const Product = () => {
     { title: "Unit", key: "unit" },
     { title: "Location", key: "location" },
     { title: "Description", key: "description" },
-    { title: "Status", key: "status", type: "status" },
   ];
   const handleChange = (value: number) => {
     setCurrentPage(value);
