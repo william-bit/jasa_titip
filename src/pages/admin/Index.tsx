@@ -22,6 +22,7 @@ ChartJS.register(
 );
 
 export const options = {
+  maintainAspectRatio: false,
   responsive: true,
   plugins: {
     legend: {
@@ -54,19 +55,24 @@ const ratingChanged = (newRating: number) => {
 const Index = () => {
   return (
     <Admin>
-      <div className="w-1/2">
-        <Bar options={options} data={data} />
-      </div>
-      <div className="flex justify-center w-1/2 border rounded-lg">
-        <div className="flex flex-col justify-center">
-          <div className="text-5xl text-center">3</div>
-          <ReactStars
-            count={5}
-            onChange={ratingChanged}
-            value={3}
-            size={24}
-            color2={"#ffd700"}
-          />
+      <div className="flex flex-col w-full h-full">
+        <div className="h-80">
+          <Bar options={options} data={data} />
+        </div>
+        <div className="flex justify-center w-full border rounded-lg">
+          <div className="flex flex-col justify-center p-4">
+            <div className="mt-5 text-5xl text-center">Ranting</div>
+            <div className="mt-6 text-5xl text-center">3</div>
+            <div className="flex justify-center">
+              <ReactStars
+                count={5}
+                onChange={ratingChanged}
+                value={3}
+                size={24}
+                color2={"#ffd700"}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </Admin>
