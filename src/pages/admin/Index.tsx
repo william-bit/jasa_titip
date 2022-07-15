@@ -56,9 +56,6 @@ const Index = () => {
   return (
     <Admin>
       <div className="flex flex-col w-full h-full">
-        <div className="h-80">
-          <Bar options={options} data={data} />
-        </div>
         <div className="flex justify-center w-full border rounded-lg">
           <div className="flex flex-col justify-center p-4">
             <div className="mt-5 text-5xl text-center">Ranting</div>
@@ -73,6 +70,9 @@ const Index = () => {
               />
             </div>
           </div>
+        </div>
+        <div className="h-80">
+          <Bar options={options} data={data} />
         </div>
       </div>
     </Admin>
