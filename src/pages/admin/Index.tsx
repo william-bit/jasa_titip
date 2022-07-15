@@ -71,7 +71,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-        <div className="h-80">
+        <div className="h-80 mt-11">
           <Bar options={options} data={data} />
         </div>
       </div>
