@@ -10,3 +10,9 @@ export const listMenu: Array<IListMenu> = [
   { label: "Transaction History", href: "/admin/report" },
   // { label: "Complain List", href: "/admin/complain" },
 ];
+
+export const listMenuSuperAdmin: Array<IListMenu> = [
+  { label: "Dashboard", href: "/super-admin" },
+  { label: "TopUp", href: "/super-admin/top-up" },
+  { label: "ConfirmTransaction", href: "/super-admin/transfer" },
+];

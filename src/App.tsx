@@ -17,6 +17,7 @@ import { AdminProfile } from "./pages/admin/Profile";
 import { Request } from "./pages/Request";
 import Report from "./pages/admin/Report";
 import Index from "./pages/admin/Index";
+import { Index as SuperAdmin } from "./pages/superAdmin/Index";
 import axios from "axios";
 import { useStore } from "./store/store";
 import { NotFound } from "./pages/NotFound";
@@ -27,6 +28,8 @@ import { Invoice } from "./pages/invoice/Invoice";
 import { Transaction } from "./pages/Transaction";
 import { OrderUser } from "./pages/OrderUser";
 import { RequestUser } from "./pages/RequestUser";
+import TopUp from "./pages/superAdmin/TopUp";
+import Transfer from "./pages/superAdmin/Transfer";
 
 function App() {
   checkGetToken();
@@ -76,6 +79,9 @@ function App() {
         ) : (
           <Route path="/admin/*" element={<NotFound />} />
         )}
+        <Route path="/super-admin" element={<SuperAdmin />} />
+        <Route path="/super-admin/top-up" element={<TopUp />} />
+        <Route path="/super-admin/transfer" element={<Transfer />} />
       </Routes>
     </>
   );

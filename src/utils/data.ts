@@ -105,7 +105,7 @@ export const getListTransaction = (currentPage: number) => {
   return axios.get(Url.transaction + "?page=" + currentPage); // credentials didn't match
 };
 export const getListTransactionFinish = (currentPage: number) => {
-  return axios.get(Url.transaction + "?page=" + currentPage); // credentials didn't match
+  return axios.get(Url.transactionFinish + "?page=" + currentPage); // credentials didn't match
 };
 
 export const getListProduct = (currentPage: number) => {
